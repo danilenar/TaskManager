@@ -92,4 +92,4 @@ The first approcach that turns to me out when designing the state machine was th
     <img src="./(old)StateChart.png" alt="StateChart"/>
 </div>
 
-this doesn't match very well with the maxim "Each state in the finite-machine-state is related to a page." because we have an __"orphan state"__ here. You see that? Yes, it's the __error__ state. This is because the state-machine can be semplified. Error state is no more than a part of __secure_wait_after_login__ state. This way, we simplified the state machine by making an observation in another layer of the architecture.
+this doesn't match very well with the maxim "Each state in the finite-machine-state is related to a page." because we have an __"orphan state"__ here. You see that? Yes, it's the __error__ state. This is because the state-machine can be simplified. Error state is no more than a part of __secure_wait_after_login__ state. This way, we simplified the state machine by making an observation in another layer of the architecture.
