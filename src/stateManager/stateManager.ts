@@ -15,6 +15,7 @@ export type TSchema = {
         error: {},
         secure_wait_after_login_fail: {},
         logged: {},
+        sesion_autoclosed: {}
     }
 }
 
@@ -44,7 +45,7 @@ function fakeLogin(context, event) {
 
 // State Machine spec
 const machineConfig: MachineConfig<TContext, TSchema, TEvents> = {
-    id: 'autentication',
+    id: 'machine',
     initial: 'iddle',
     context: {
         login_fails: 0,
@@ -64,27 +65,22 @@ const machineConfig: MachineConfig<TContext, TSchema, TEvents> = {
                     actions: ['restart_login_fails'],
                 },
                 onError: {
-                    target: "error",
+                    target: "secure_wait_after_login_fail",
                     actions: [
                         'increment_login_fails',
                     ],
                 }
             }
         },
-        error: {
+        secure_wait_after_login_fail: {
             on: {
                 '': [
                     {
                         target: 'iddle',
                         cond: 'maxLoginFailsNotReached'
                     },
-                    {
-                        target: 'secure_wait_after_login_fail',
-                    }
-                ]
+                ],
             },
-        },
-        secure_wait_after_login_fail: {
             after: {
                 5000: {
                     target: 'iddle',
@@ -103,7 +99,8 @@ const machineConfig: MachineConfig<TContext, TSchema, TEvents> = {
         sesion_autoclosed: {
             on: {
                 OK: {
-                    target: 'iddle',                },
+                    target: 'iddle',
+                },
             },
         }
     },
