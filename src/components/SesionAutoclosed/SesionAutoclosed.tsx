@@ -7,10 +7,10 @@ export interface SesionAutoclosedProps {
 
 const SesionAutoclosed = (props: SesionAutoclosedProps) => {
     return (
-        <div className='main-container'>
+        <React.Fragment>
             <h2>Maxium session time reached, closed</h2>
             <button onClick={() => props.send('OK')}>Ok</button>
-        </div>
+        </React.Fragment>
     );
 };
 

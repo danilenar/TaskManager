@@ -9,10 +9,18 @@ This project is intended to be an application of all the stuff I've learned from
 ## Technologies used
 
 - React
+
 - Node
+
 - Express
+
 - Webpack
+
+- Jest
+
 - Typescript
+
+
 - [XState](https://xstate.js.org/docs/)
 
 ## v0.0.1
@@ -21,6 +29,7 @@ This project is intended to be an application of all the stuff I've learned from
 - [x] Class diagram.
 - [x] Database diagram. 
 - [x] Autentication flow, frontend.
+- [ ] Implement TDD.
 - [ ] Classes implementation.
 - [ ] Database connection.
 - [ ] API creation.
@@ -49,8 +58,26 @@ In the __logged__ state, the system will have nested states to allow the authent
 
 ### tl;dr
 
-> Each state in machine state is related to a page. Each transition can be a user interaction (Button) or a transition (Promise resolved/rejected, timer). But must not be strictly related to the components.
+> Each state in machine state is related to a page. 
 
+  - Each transition can be a user interaction (Button) or a transition (Promise resolved/rejected, timer). But must not be strictly related to the components.
+
+
+>  How to search for style
+
+  - The definitions scales down from container to contained components.
+
+
+>  And rules of style creation
+
+  - May seem obvious but mobile-first: media-queries are only used in @min-x
+    form.
+
+  - Same-level definitions must be declared and adjusted Z-index.
+
+>  Start each finding in top-level. 
+
+  - .
 
 ### States and pages
 

@@ -1,14 +1,19 @@
-$bg-color: yellow;
-$border-color: blue;
 
-.app {
-  font-family: helvetica, arial, sans-serif;
+/**
+  ██╗███╗   ███╗██████╗  ██████╗ ██████╗ ████████╗ █████╗ ███╗   ██╗████████╗
+  ██║████╗ ████║██╔══██╗██╔═══██╗██╔══██╗╚══██╔══╝██╔══██╗████╗  ██║╚══██╔══╝
+  ██║██╔████╔██║██████╔╝██║   ██║██████╔╝   ██║   ███████║██╔██╗ ██║   ██║   
+  ██║██║╚██╔╝██║██╔═══╝ ██║   ██║██╔══██╗   ██║   ██╔══██║██║╚██╗██║   ██║   
+  ██║██║ ╚═╝ ██║██║     ╚██████╔╝██║  ██║   ██║   ██║  ██║██║ ╚████║   ██║   
+  ╚═╝╚═╝     ╚═╝╚═╝      ╚═════╝ ╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═══╝   ╚═╝   
 
-  p {
-    background-color: $bg-color;
-  }
-}
-
+ ********How to search for style*********************************************
+  - The definitions scales down from container to contained components.
+  ********And rules of style creation*****************************************
+  - May seem obvious but mobile-first: media-queries are only used in @min-x
+    form.
+  - Same-level definitions must be declared and adjusted Z-index.
+ */
 * {
   box-sizing: border-box;
 }
@@ -23,25 +28,26 @@ body {
   min-height: 100vh;
 }
 
-h1 {
-  margin: 20;
-  text-align: center;
-}
-h2 {
-  margin: 0;
-  text-align: center;
-}
-
 .main-container {
   background-color: #fff;
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.125);
   display: flex;
   flex-direction: column;
-  height: 400px;
-  width: 500px;
   align-items: center;
-  justify-content:center;
+  justify-content: center;
+  text-align: center;
+  // dimensions of this container changes on media width growt 
+  // from all-to-all to central place.
+  // @to_do create test to see on screen all child components of
+  // main-container
+  height: 100vh;
+  width: 100vw; 
+  overflow: hidden;
+  @media (min-width: 600px) {
+    width: 500px;
+    overflow-y: visible;
+  }
 }
 
 .form-header {
@@ -135,4 +141,13 @@ button {
   background-color: #dff0d8;
   border-color: #d0e9c6;
   color: #3c763d;
+}
+
+h1{
+  margin: 20;
+}
+
+h2 {
+  margin: 0;
+  text-align: center;
 }

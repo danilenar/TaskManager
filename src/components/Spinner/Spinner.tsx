@@ -7,9 +7,9 @@ export interface SpinnerProps {
 
 const Spinner = (props: SpinnerProps) => {
     return (
-        <div className="main-container">
+        <React.Fragment>
             <div className="loader"></div>
-        </div>
+        </React.Fragment>
     );
 };
 

@@ -14,7 +14,7 @@ function App() {
     const [stateMachine, send] = useMachine(machine);
 
     return (
-        <div className="app">
+        <div className="main-container">
             <h1>Task Manager</h1>
             
             {(()=>{
