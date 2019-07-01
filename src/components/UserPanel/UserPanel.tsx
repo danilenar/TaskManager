@@ -7,7 +7,7 @@ export interface UserPanelProps {
 
 const UserPanel = (props: UserPanelProps) => {
     return (
-        <div className='main-container'>
+        <React.Fragment>
             <div className='userName'>User: Admin</div>
             <button
                 id="SubmitButton"
@@ -38,7 +38,7 @@ const UserPanel = (props: UserPanelProps) => {
             >
                 <span className="align-middle">Log out</span>
             </button>
-        </div>
+        </React.Fragment>
     );
 };
 

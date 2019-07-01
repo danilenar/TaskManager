@@ -19,7 +19,7 @@ const LoginForm = (props: LoginFormProps) => {
         password: '',
     });
     return (
-        <div className="main-container">
+        <React.Fragment>
             <div className="form-header">
                 <h2>{props.subtitle}</h2>
             </div>
@@ -63,7 +63,7 @@ const LoginForm = (props: LoginFormProps) => {
                     </button>
                 </form>
             </div>
-        </div>
+        </React.Fragment>
     );
 };
 

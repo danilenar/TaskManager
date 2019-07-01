@@ -9,10 +9,18 @@ This project is intended to be an application of all the stuff I've learned from
 ## Technologies used
 
 - React
+
 - Node
+
 - Express
+
 - Webpack
+
+- Jest
+
 - Typescript
+
+
 - [XState](https://xstate.js.org/docs/)
 
 ## v0.0.1
@@ -21,6 +29,7 @@ This project is intended to be an application of all the stuff I've learned from
 - [x] Class diagram.
 - [x] Database diagram. 
 - [x] Autentication flow, frontend.
+- [ ] Implement TDD.
 - [ ] Classes implementation.
 - [ ] Database connection.
 - [ ] API creation.
@@ -49,8 +58,26 @@ In the __logged__ state, the system will have nested states to allow the authent
 
 ### tl;dr
 
-> Each state in machine state is related to a page. Each transition can be a user interaction (Button) or a transition (Promise resolved/rejected, timer). But must not be strictly related to the components.
+> Each state in machine state is related to a page. 
 
+  - Each transition can be a user interaction (Button) or a transition (Promise resolved/rejected, timer). But must not be strictly related to the components.
+
+
+>  How to search for style
+
+  - The definitions scales down from container to contained components.
+
+
+>  And rules of style creation
+
+  - May seem obvious but mobile-first: media-queries are only used in @min-x
+    form.
+
+  - Same-level definitions must be declared and adjusted Z-index.
+
+>  Start each finding in top-level. 
+
+  - .
 
 ### States and pages
 
@@ -65,4 +92,4 @@ The first approcach that turns to me out when designing the state machine was th
     <img src="./(old)StateChart.png" alt="StateChart"/>
 </div>
 
-this doesn't match very well with the maxim "Each state in the finite-machine-state is related to a page." because we have an __"orphan state"__ here. You see that? Yes, it's the __error__ state. This is because the state-machine can be semplified. Error state is no more than a part of __secure_wait_after_login__ state. This way, we simplified the state machine by making an observation in another layer of the architecture.
+this doesn't match very well with the maxim "Each state in the finite-machine-state is related to a page." because we have an __"orphan state"__ here. You see that? Yes, it's the __error__ state. This is because the state-machine can be simplified. Error state is no more than a part of __secure_wait_after_login__ state. This way, we simplified the state machine by making an observation in another layer of the architecture.
